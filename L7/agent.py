@@ -29,19 +29,19 @@ async def main():
             description="Finds and extracts information from official documentation sources.",
             prompt = docs_researcher_prompt,
             tools = ["WebSearch", "WebFetch"],
-            model = "haiku"
+            model = "Alibaba Bailian/qwen3.7-plus"
         ),
         "repo_analyzer" : AgentDefinition(
             description="Analyzes code repositories for structure, examples, and implementation details.",
             prompt = repo_analyzer_prompt,
             tools = ["WebSearch","Bash"],
-            model = "haiku"
+            model = "Alibaba Bailian/qwen3.7-plus"
         ),
         "web_researcher" : AgentDefinition(
             description="Finds articles, videos, and community content.",
             prompt = web_researcher_prompt,
             tools = ["WebSearch", "WebFetch"],
-            model = "haiku"
+            model = "Alibaba Bailian/qwen3.7-plus"
         ),
     }
 
@@ -61,7 +61,7 @@ async def main():
         },
         allowed_tools=["Skill", "Task", "Write", "Bash", "WebSearch", "WebFetch", 
                        "mcp__notion__API-post-search", "mcp__notion__API-patch-block-children"], # read-only tools like read, Grep, Glob are allowed by default
-        model="sonnet",
+        model="Alibaba Bailian/qwen3.7-plus",
         agents=agents
     )
 
